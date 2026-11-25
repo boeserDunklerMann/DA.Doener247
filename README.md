@@ -40,11 +40,14 @@ Repräsentiert eine deutsche Adressangabe mit Geolocation
 **Kalb**
 
 **Gefluegel**
+##### VerzehrArt
+**ZumMitnehmen**
 
+**VorOrt**
 #### Model-Klassen
 ##### DoenerBase
 Basisklasse aller Model-Klassen
-###### Properties
+
 **Id** [int] - Autoincrement, PrimaryKey
 
 **ChangeDate** [DateTime] - Wird von DbContext gesetzt
@@ -54,6 +57,16 @@ Basisklasse aller Model-Klassen
 **Name** [string]
 
 **Address** [Address] - wird nicht direkt gespeichert, sondern auf die Spalten AddressStreet, AddressHouseNr, AddressZip, AddressCity, AddressLat, AddressLong abgebildet ([Ignore])
+##### DoenerKebap
+**Fleisch** [FleischArt]
+
+**Sossen** [tbd]
+
+**Salat** [tbd]
+
+**Verzehr** [VerzehrArt]
+
+**BitroID** [int] - ForeignKey auf Id des Bistros
 
 #### DbContext
 
@@ -61,5 +74,4 @@ Basisklasse aller Model-Klassen
 
 
 ## Bemerkungen
-1. all times in UTC
-2. Code-Comments in german language
+1. Code-Comments in german language
