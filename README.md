@@ -35,6 +35,11 @@ Repräsentiert eine deutsche Adressangabe mit Geolocation
 **Lat** [double?] - Breitengrad (WGS84)
 
 **Long** [double?] - Längengrad (WGS84)
+#### Enum
+##### FleischArt
+**Kalb**
+
+**Gefluegel**
 
 #### Model-Klassen
 ##### DoenerBase
