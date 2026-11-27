@@ -107,7 +107,10 @@ Das eigentliche Döner-Produkt
 
 **Bistro** [DoenerBistro] - das Bistro
 
+### DA.Doener247.SQliteAccess
+.NET 11+ (läuft nur auf MAUI-Client)
 #### DbContext
+
 `await db.CreateTableAsync<Bewertung>(CreateFlags.ImplicitPK);`
 
 ### DA.Doener247.MAUI

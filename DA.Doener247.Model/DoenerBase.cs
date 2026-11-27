@@ -8,11 +8,11 @@
 	{
 		public Guid Id { get; set; }
 		/// <remarks>will be set in call to Save(Async)</remarks>
-		public DateTime ChangeDate { get; set; }
+		public DateTime? ChangeDate { get; set; }
 		/// <remarks>will be set in call to Save(Async)</remarks>
-		public DateTime CreationDate { get; set; }
+		public DateTime? CreationDate { get; set; }
 
-		public static DoenerBase Create<T>() where T : DoenerBase, new()
+		public static T Create<T>() where T : DoenerBase, new()
 		{
 			return new T() { Id = GuidV7.Create() };
 		}

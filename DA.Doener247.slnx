@@ -1,3 +1,7 @@
 <Solution>
   <Project Path="DA.Doener247.Model/DA.Doener247.Model.csproj" Id="c649619d-988d-4dd8-8105-f70f96c707e3" />
+  <Project Path="DA.Doener247.SQliteAccess.Test/DA.Doener247.SQliteAccess.Test.csproj" Id="06ebd175-b47d-4fe2-b8c6-94da61e706ed">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="DA.Doener247.SQliteAccess/DA.Doener247.SQliteAccess.csproj" Id="5b46ccd5-c7aa-4027-abc6-929b4a2c08a8" />
 </Solution>
