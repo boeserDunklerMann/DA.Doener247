@@ -106,6 +106,81 @@ Das eigentliche Döner-Produkt
 **Bemerkung** [string?]
 
 **Bistro** [DoenerBistro] - das Bistro
+##### Bewertung
+Die eigentliche Bewertung des Produktes
+
+###### BewertungsItem.Fleisch
+Fleischqualität – 20 Punkte
+- Fleischqualität und Fleischsorte
+- Geschmack und Würzung
+- Saftigkeit
+- Knusprigkeit und Röstaromen
+- Verhältnis von Fleisch zu Fett
+###### BewertungsItem.Brot
+Brot – 10 Punkte
+- Frische und Qualität
+- Knusprigkeit außen
+- Weichheit innen
+- Geschmack
+- Stabilität: Hält das Brot den Inhalt zusammen?
+###### BewertungsItem.Salat
+Salat und Gemüse – 10 Punkte
+- Frische und Knackigkeit
+- Qualität der Zutaten
+- Geschmack
+- Ausgewogenheit
+- Keine wässrigen oder welken Zutaten
+###### BewertungsItem.Sosse
+Soßen – 10 Punkte
+- Geschmack und Würzung
+- Cremigkeit und Konsistenz
+- Qualität und Eigenständigkeit
+- Menge
+- Zusammenspiel mit Fleisch und Gemüse
+###### BewertungsItem.Zutaten
+Zusammenspiel der Zutaten – 10 Punkte
+- Ausgewogenheit aller Bestandteile
+- Richtige Verteilung der Zutaten
+- Kein Bestandteil dominiert unangemessen
+- Jeder Bissen bietet eine gute Mischung
+###### BewertungsItem.Portionsgreosse
+Portionsgröße – 10 Punkte
+- Menge des Fleisches
+- Gesamtmenge
+- Sättigungsgrad
+- Angemessenheit der Portion
+###### BewertungsItem.Zubereitung
+Zubereitung – 10 Punkte
+- Richtige Temperatur
+- Frische Zubereitung
+- Fleisch nicht trocken oder verbrannt
+- Brot richtig getoastet
+- Sorgfältiges Befüllen
+###### BewertungsItem.Hygiene
+Hygiene und Sauberkeit – 5 Punkte
+- Sauberkeit des Verkaufsbereichs
+- Saubere Arbeitsgeräte
+- Hygienischer Umgang mit Lebensmitteln
+###### BewertungsItem.PreisLeistung
+Preis-Leistungs-Verhältnis – 10 Punkte
+- Preis im Verhältnis zur Qualität
+- Preis im Verhältnis zur Portionsgröße
+- Angemessenheit gegenüber vergleichbaren Angeboten
+###### BewertungsItem.Gesamteindruck
+Gesamteindruck – 5 Punkte
+- Würde man ihn wieder kaufen?
+- Bleibt der Geschmack positiv in Erinnerung?
+- Wie überzeugend ist das Gesamterlebnis?
+- Stempel- oder Rabattkarte
+
+###### Bewertungsskala
+Gesamtpunktzahl:	Bewertung
+- 90–100:	Herausragend
+- 80–89:	Sehr gut
+- 70–79:	Gut
+- 60–69:	Durchschnittlich
+- 50–59:	Unterdurchschnittlich
+- Unter 50:	Schwach
 
 ### DA.Doener247.SQliteAccess
 .NET 11+ (läuft nur auf MAUI-Client)
