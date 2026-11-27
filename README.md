@@ -46,6 +46,24 @@ Repräsentiert eine deutsche Adressangabe mit Geolocation
 **ZumMitnehmen**
 
 **VorOrt**
+##### ProduktArt
+Es muss nicht immer Döner sein, oftmals wird in Bistros mehr angeboten:
+**Doener**
+
+**DoenerVeetarisch** - mit Quietschkäse
+
+**DoenerVegan** - mit Seitan
+
+**DoenerTeller**
+
+**DoenerBox**
+
+**Dueruem**
+
+**Lahmcun**
+
+**sonstige** - z.B. Burger, Döner-Hawaii, etc. näher spezifizieren im Freitext
+
 #### Model-Klassen
 ##### DoenerBase
 Basisklasse aller Model-Klassen
@@ -64,17 +82,30 @@ Basisklasse aller Model-Klassen
 **Name** [string]
 
 **Address** [Address] - wird nicht direkt gespeichert, sondern auf die Spalten AddressStreet, AddressHouseNr, AddressZip, AddressCity, AddressLat, AddressLong abgebildet ([Ignore])
+##### Sosse
+Da die Soßen fluktuierend sind, speichern wir die separat in einer Klasse in der DB. Konfiguration über Settings-Page mgl.
+
+**Bezeichnung** [string]
+##### Salat
+Fluktuierend wie `Sosse`
+
+** Bezeichnung** [string]
+
 ##### DoenerKebap
 Das eigentliche Döner-Produkt
 **Fleisch** [FleischArt]
 
-**Sossen** [tbd]
+**Sossen** [List<Sosse>]
 
-**Salat** [tbd]
+**Salat** [List<Salat>]
 
 **Verzehr** [VerzehrArt]
 
-**BistroID** [int] - ForeignKey auf Id des Bistros
+**ProduktArt** [ProduktArt]
+
+**Bemerkung** [string?]
+
+**Bistro** [DoenerBistro] - das Bistro
 
 #### DbContext
 `await db.CreateTableAsync<Bewertung>(CreateFlags.ImplicitPK);`

@@ -1,10 +1,10 @@
-﻿using SQLite;
-
+﻿
 namespace DA.Doener247.Model
 {
 	/// <ChangeLog>
 	/// <Create Datum="25.11.2026" Entwickler="DA" />
 	/// <Change Datum="25.11.2026" Entwickler="DA" Beschreibung="Address auf einzelne Spalten abgebildet (sqlite-net)" />
+	/// <Change Datum="27.11.2026" Entwickler="DA">add method SetAddress</Change>
 	/// </ChangeLog>
 	public class DoenerBistro : DoenerBase
 	{
@@ -19,10 +19,18 @@ namespace DA.Doener247.Model
 		public double? AddressLong { get; set; }
 
 		/// <summary>
+		/// Setzt die Adresse, da der entsprechende Setter private ist, damit SQLite diese Property ignoriert.
+		/// </summary>
+		/// <param name="address"></param>
+		public void SetAddress(Address address)
+		{
+			this.Address = address;
+		}
+
+		/// <summary>
 		/// Komfort-Zugriff auf die Adresse. Wird nicht persistiert, sondern liest/schreibt die Address*-Spalten.
 		/// Hinweis: Da Address eine struct ist, immer die komplette Adresse zuweisen.
 		/// </summary>
-		[Ignore]
 		public Address Address
 		{
 			get => new()
@@ -34,7 +42,7 @@ namespace DA.Doener247.Model
 				Lat = AddressLat,
 				Long = AddressLong
 			};
-			set
+			private set
 			{
 				AddressStreet = value.Street;
 				AddressHouseNr = value.HouseNr;
