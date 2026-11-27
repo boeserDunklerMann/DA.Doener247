@@ -12,12 +12,12 @@ Ziel ist es, eine Android-App zu erstellen, mit der man Döner-Kebap nach vielf�
 
 ## Platform und Abhängigkeiten
 ### Frameworks
-* .NET 11+
+* .NET 11+ (außer DA.Doener247.Model, da Lauffähigkeit auf älteren Raspberry PI Modellen gewährleistet sein muss)
 * MAUI
-### Speicheung
+### Speicherung
 * SQLlite
 ## Implementation
-Following components/assemblies will be created:
+Folgende Komponenten/Assemblies werden erstellt, folgend eine kurze Erläuterung:
 ### DA.Doener247.Model
 #### Interfaces
 #### structs
@@ -40,6 +40,8 @@ Repräsentiert eine deutsche Adressangabe mit Geolocation
 **Kalb**
 
 **Gefluegel**
+
+**gemischt**
 ##### VerzehrArt
 **ZumMitnehmen**
 
@@ -48,7 +50,7 @@ Repräsentiert eine deutsche Adressangabe mit Geolocation
 ##### DoenerBase
 Basisklasse aller Model-Klassen
 
-**Id** [int] - Autoincrement, PrimaryKey
+**Id** [Guid] - AutoGuid(increment), PrimaryKey
 
 **ChangeDate** [DateTime] - Wird von DbContext gesetzt
 
@@ -66,7 +68,7 @@ Basisklasse aller Model-Klassen
 
 **Verzehr** [VerzehrArt]
 
-**BitroID** [int] - ForeignKey auf Id des Bistros
+**BistroID** [int] - ForeignKey auf Id des Bistros
 
 #### DbContext
 
