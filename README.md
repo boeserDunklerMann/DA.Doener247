@@ -50,16 +50,22 @@ Repräsentiert eine deutsche Adressangabe mit Geolocation
 ##### DoenerBase
 Basisklasse aller Model-Klassen
 
-**Id** [Guid] - AutoGuid(increment), PrimaryKey
+**Id** [int] - AutoGuid(increment), PrimaryKey - Guid als Primary Key ist performancemäßig suboptimal
 
 **ChangeDate** [DateTime] - Wird von DbContext gesetzt
 
 **CreationDate** [DateTime] - Wird von DbContext gesetzt
+
+**SyncDate** [DateTime?] - Wann wurde Datensatz zum Server synched, oder `null` wenn noch gar nicht
+###### Methoden
+`static DoenerBase Create<T>()` - erzeugt ein neues DoenerBase-object
+
 ##### DoenerBistro
 **Name** [string]
 
 **Address** [Address] - wird nicht direkt gespeichert, sondern auf die Spalten AddressStreet, AddressHouseNr, AddressZip, AddressCity, AddressLat, AddressLong abgebildet ([Ignore])
 ##### DoenerKebap
+Das eigentliche Döner-Produkt
 **Fleisch** [FleischArt]
 
 **Sossen** [tbd]
@@ -71,9 +77,12 @@ Basisklasse aller Model-Klassen
 **BistroID** [int] - ForeignKey auf Id des Bistros
 
 #### DbContext
+`await db.CreateTableAsync<Bewertung>(CreateFlags.ImplicitPK);`
 
 ### DA.Doener247.MAUI
 
 
 ## Bemerkungen
 1. Code-Comments in german language
+### Gemeinsame .Model-Assembly für Client und Server
+Deswegen müssen serverseitig mit EF-Core per FluentAPI/in OnModelCreating die PKs definiert werden.
