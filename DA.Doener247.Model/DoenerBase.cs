@@ -1,6 +1,4 @@
-﻿using SQLite;
-
-namespace DA.Doener247.Model
+﻿namespace DA.Doener247.Model
 {
 	/// <ChangeLog>
 	/// <Create Datum="25.11.2026" Entwickler="DA" />
@@ -8,7 +6,6 @@ namespace DA.Doener247.Model
 	/// </ChangeLog>
 	public class DoenerBase
 	{
-		[PrimaryKey, AutoIncrement]
 		public Guid Id { get; set; }
 		/// <remarks>will be set in call to Save(Async)</remarks>
 		public DateTime ChangeDate { get; set; }
